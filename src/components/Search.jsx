@@ -3,6 +3,8 @@ import "../style/Search.css"
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import {DateRangePicker} from 'react-date-range';
+import PeopleIcon from '@mui/icons-material/People';
+import { Button } from '@mui/material';
 
 function Search() {
     const [startDate,setStartDate]= useState(new Date());
@@ -22,6 +24,12 @@ function Search() {
   return (
     <div className="search">
         <DateRangePicker ranges={[selectionRange]} onChange={handleSelect}/>
+        <h2>
+            Number of guests 
+            <PeopleIcon/>
+        </h2>
+        <input type="number" defaultValue={2} min={0} />
+        <Button> Search Airbnb</Button>
     </div>
     )
 }
